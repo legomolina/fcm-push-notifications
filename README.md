@@ -7,7 +7,7 @@ Basic class to send push notifications using google firebase.
 FMC Push Notifications is hosted in packagist so you can get it from [Composer](https://getcomposer.org/ "Composer")
 
 ```
-composer require legomolina/fcm-push-notification
+composer require legomolina/fcm-push-notifications
 ```
 
 ### Usage
