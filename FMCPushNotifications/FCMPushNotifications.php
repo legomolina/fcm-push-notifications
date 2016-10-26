@@ -17,10 +17,10 @@ namespace FCMPushNotifications;
 class FCMPushNotifications
 {
     // Server API key obtained from Google
-    const API_KEY = 'my_api_key';
+    public $API_KEY = 'my_api_key';
 
     // Google URL to send the response
-    const URL = 'https://fcm.googleapis.com/fcm/send';
+    private $URL = 'https://fcm.googleapis.com/fcm/send';
 
     /**
      * Sends a notification
@@ -47,7 +47,7 @@ class FCMPushNotifications
         }
 
         $headers = array(
-            'Authorization: key=' . self::API_KEY,
+            'Authorization: key=' . self::$API_KEY,
             'Content-Type: application/json'
         );
 
@@ -55,7 +55,7 @@ class FCMPushNotifications
         $ch = curl_init();
 
         // Set the url, number of POST vars, POST data
-        curl_setopt($ch, CURLOPT_URL, 'http://fcm.googleapis.com/fcm/send');
+        curl_setopt($ch, CURLOPT_URL, self::$URL);
 
         curl_setopt($ch, CURLOPT_POST, true);
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
