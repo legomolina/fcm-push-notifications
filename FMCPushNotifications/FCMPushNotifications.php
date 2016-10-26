@@ -17,10 +17,10 @@ namespace FCMPushNotifications;
 class FCMPushNotifications
 {
     // Server API key obtained from Google
-    public $API_KEY = 'my_api_key';
+    public static $API_KEY = 'my_api_key';
 
     // Google URL to send the response
-    private $URL = 'https://fcm.googleapis.com/fcm/send';
+    private static $URL = 'https://fcm.googleapis.com/fcm/send';
 
     /**
      * Sends a notification
