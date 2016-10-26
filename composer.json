@@ -1,0 +1,26 @@
+{
+  "name": "legomolina/fcm-push-notification",
+  "type": "library",
+  "description": "Basic class to send push notifications through Google Firebase",
+  "license": "GPL-3.0",
+  "authors": [
+    {
+      "name": "Cristian Molina",
+      "email": "legomolina@gmail.com"
+    }
+  ],
+  "keywords": [
+    "FCM",
+    "Google firebase",
+    "Push notifications",
+    "Android"
+  ],
+  "require": {
+    "php": ">=7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "FMC\\": "FMC/"
+    }
+  }
+}
