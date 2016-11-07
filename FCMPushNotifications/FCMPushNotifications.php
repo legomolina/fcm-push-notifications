@@ -30,13 +30,15 @@ class FCMPushNotifications
      * @param array $data Optional data to send
      * @return mixed cURL response
      */
-    public static function send($to, $title = "", $message = "", $data = array())
+    public static function send($to, $title = "", $message = "", $icon = "", $sound = "", $data = array())
     {
         $fields = array(
             "to" => $to,
             "notification" => array(
-                "title"=> $title,
-                "text"=> $message
+                "title" => $title,
+                "text" => $message,
+                "sound" => $sound,
+                "icon" => $icon
             )
         );
 
