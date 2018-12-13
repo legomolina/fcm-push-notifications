@@ -72,9 +72,15 @@ class FCMPushNotifications
         // Execute post
         $result = curl_exec($ch);
 
+        //Retrieve http status
+        $status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
         // Close connection
         curl_close($ch);
 
-        return $result;
+        return json_encode([
+            "response" => $result,
+            "status" => $status
+        ]);
     }
 }
