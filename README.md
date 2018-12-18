@@ -24,10 +24,16 @@ Set your Firebase API key
 FCMPushNotifications::API_KEY = "my_api_key";
 ```
 
+Create a notification object:
+
+```php
+$notification = new FCMNotification("Title", "Message");
+```
+
 And send notifications
 
 ```php
-FCMPushNotifications::send('mobile_token_or_topic', 'title', 'message');
+FCMPushNotifications::send("mobile_token_or_topic", $notification, [ "custom" => "data" ]);
 ```
 
 ### License
