@@ -30,17 +30,15 @@ class FCMPushNotifications
      * @param array $data Optional data to send
      * @return mixed cURL response
      */
-    public static function send($to, $title = "", $message = "", $icon = "", $sound = "", $data = array())
+    public static function send($to, $notification = null, $data = array())
     {
-        $fields = array(
-            "to" => $to,
-            "notification" => array(
-                "title" => $title,
-                "text" => $message,
-                "sound" => $sound,
-                "icon" => $icon
-            )
-        );
+        $fields = [
+            "to" => $to
+        ];
+        
+        if ($notification !== null) {
+            $fields["notification"] = $notification;
+        }
 
         if (is_array($data) && count($data) > 0) {
             foreach ($data as $key => $value) {
@@ -48,10 +46,10 @@ class FCMPushNotifications
             }
         }
 
-        $headers = array(
+        $headers = [
             'Authorization: key=' . self::$API_KEY,
             'Content-Type: application/json'
-        );
+        ];
 
         // Open connection
         $ch = curl_init();
