@@ -25,12 +25,11 @@ class FCMPushNotifications
     /**
      * Sends a notification
      * @param string $to Device token or topic to send the notification
-     * @param string $title The title to show in the notification
-     * @param string $message The message to show in the notification
+     * @param FCMNotification $notification Notfication object with data
      * @param array $data Optional data to send
-     * @return mixed cURL response
+     * @return String Json with status response code and message
      */
-    public static function send($to, $notification = null, $data = array())
+    public static function send(string $to, FCMNotification $notification = null, array $data = array())
     {
         $fields = [
             "to" => $to
