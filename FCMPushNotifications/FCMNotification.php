@@ -52,7 +52,7 @@ class FCMNotification implements \JsonSerializable
     }
 
     public function getSound() {
-        return $sound->sound;
+        return $this->sound;
     }
 
     public function setSound($sound) {
